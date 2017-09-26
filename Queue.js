@@ -7,7 +7,7 @@ function Queue(){
     this.enqueue = function(element){
         items.push(element);
     }
-
+    
     //I don't think it has a O(1) runtime.
     this.dequeue = function(){
         return items.shift();
@@ -32,3 +32,28 @@ function Queue(){
 
 let queue = new Queue();
 console.log(queue.isEmpty());
+
+//ES6 Syntax
+//WeakMap-> keeps the items property private.
+//Outer Function or Closure->  encapsulates the Queue class. 
+
+let Queue2 = (function () {
+    const items = new WeakMap();
+
+    class Queue2{
+        constructor(){
+            items.set(this, []);
+        }
+        enqueue(element){
+            let q_elem = items.get(this);
+            q_elem.push(element);
+        }
+        dequeue(){
+            let q_elem = items.get(this);
+            let output = q_elem.shift();
+            return output;
+        }
+        //other methods keep on following the same format.
+    }
+    return Queue2;
+})();
