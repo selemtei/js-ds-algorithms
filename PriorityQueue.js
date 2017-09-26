@@ -4,6 +4,7 @@
 //Other approach, we could simply add them then 
 //dequeue them based on their priority.
 
+//This is a Minimum priority queue.
 function PriorityQueue(){
     let items = [];
     function QueueElement(element, priority){
