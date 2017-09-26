@@ -4,7 +4,7 @@ function Stack(){
     //arrays in js don't need to declared with a fixed size.
 
     let items = [];
-    
+
     this.push = function(element){
         items.push(element);
     }
@@ -46,6 +46,7 @@ console.log(stack.peek());
 console.log(stack.size());
 console.log(stack.pop());
 
+//refresh on some stack problems in book. 
 
 /* The Equivalent ES6 syntax.
 class Stack(){
