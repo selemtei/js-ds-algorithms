@@ -8,4 +8,13 @@ function Dictionary(){
   this.set = function(key, value){
     items[key] = value;
   };
+
+  this.delete = function(){
+    if(this.has(key)){
+      delete items[key];
+      return true;
+    }
+    return false;
+  };
+  
 }
