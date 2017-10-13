@@ -66,4 +66,19 @@ function Set(){
     }
     return values;
   };
+
+  this.union = function(otherSet){
+    let unionSet = new Set();
+    let values = this.values();
+    
+    for(let index = 0; index < values.length; index++){
+      unionSet.add(values[index]);
+    }
+
+    values = otherSet.values();
+    for(let index = 0; index < values.length; index++){
+      unionSet.add(values[index]);
+    }
+    return unionSet;
+  };
 }
