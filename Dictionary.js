@@ -1,5 +1,6 @@
 function Dictionary(){
   var items = {};
+  var size = 0;
 
   this.has = function(){
     return key in items;
@@ -7,11 +8,13 @@ function Dictionary(){
 
   this.set = function(key, value){
     items[key] = value;
+    size = size + 1;
   };
 
   this.delete = function(){
     if(this.has(key)){
       delete items[key];
+      size = size + 1;
       return true;
     }
     return false;
@@ -29,5 +32,18 @@ function Dictionary(){
       }
     }
     return values;
+  };
+
+  this.clear = function(){
+    items = {};
+    size = 0;
+  };
+  
+  this.keys = function(){
+    return Object.keys(items);
+  };
+
+  this.print = function(){
+    console.log(items);
   };
 }
