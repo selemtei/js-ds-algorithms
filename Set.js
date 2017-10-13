@@ -31,4 +31,19 @@ function Set(){
   this.clear = function(){
     items = {};
   };
+
+  this.sizePolyfill = function(){
+    let count = 0;
+    for(let key in items){
+      if(items.hasOwnProperty(key)){
+        count = count + 1;
+      }
+    }
+    return count;
+  };
+
+  //Object.keys might not work in newer version of browsers. 
+  this.size = function(){
+    return Object.keys(items).length || sizePolyfill();
+  };
 }
