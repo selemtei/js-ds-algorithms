@@ -14,5 +14,13 @@ function Set(){
       return true;
     }
     return false;
-  }
+  };
+
+  this.delete = function(value){
+    if(this.has(value)){
+      delete items[value];
+      return true;
+    }
+    return false;
+  };
 }
