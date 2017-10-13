@@ -46,4 +46,24 @@ function Set(){
   this.size = function(){
     return Object.keys(items).length || sizePolyfill();
   };
+
+  //valuesPolyfill method
+  this.valuesPolyfill  = function(){
+    let values = [];
+    for(let key in items){
+      if(items.hasOwnProperty(key)){
+        values.push(items[key]);
+      }
+    }
+    return values;
+  };
+
+  this.values = function(){
+    let values = [];
+    let arr_of_keys = Object.keys(items);
+    for(let index = 0; index < arr_of_keys.length; index++){
+      values.push(items[arr_of_keys[index]]);
+    }
+    return values;
+  };
 }
