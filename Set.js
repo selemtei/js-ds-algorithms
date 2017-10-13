@@ -81,4 +81,16 @@ function Set(){
     }
     return unionSet;
   };
+
+  this.intersection = function(otherSet){
+    let intersectionSet = new Set();
+    let values = this.values();
+
+    for(let index = 0; index < values.length; index++){
+      if(otherSet.has(values[index])){
+        intersectionSet.add(values[index]);
+      }
+    }
+    return intersectionSet;
+  };
 }
