@@ -7,5 +7,12 @@ function Set(){
     //return value in items;
     return items.hasOwnProperty(value);
   };
-  
+
+  this.add = function(value){
+    if(!this.has(value)){
+      items[value] = value;
+      return true;
+    }
+    return false;
+  }
 }
