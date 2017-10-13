@@ -46,4 +46,8 @@ function Dictionary(){
   this.print = function(){
     console.log(items);
   };
+
+  this.getSize = function(){
+    return size;
+  };
 }
