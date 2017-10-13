@@ -23,4 +23,12 @@ function Set(){
     }
     return false;
   };
+
+  this.print = function(){
+    console.log(items);
+  };
+
+  this.clear = function(){
+    items = {};
+  };
 }
