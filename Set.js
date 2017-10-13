@@ -93,4 +93,15 @@ function Set(){
     }
     return intersectionSet;
   };
+
+  this.difference = function(){
+    let differenceSet = new Set();
+    let values = this.values();
+    for(let index = 0; index < values.length; index++){
+      if(!otherSet.has(values[index])){
+        differenceSet.add(values[index]);
+      }
+    }
+    return differenceSet;
+  };
 }
