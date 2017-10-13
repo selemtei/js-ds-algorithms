@@ -1,7 +1,7 @@
 function Stack(){
     //properties and methods go here!
-    //we don't need to declare a pointer varible
-    //arrays in js don't need to declared with a fixed size.
+    //we don't need to declare a pointer variable
+    //arrays in js don't need to be declared with a fixed size.
 
     let items = [];
 
@@ -13,7 +13,7 @@ function Stack(){
         let value = this.isEmpty() ? "stack was empty already!" : items.pop();
         return value;
     };
-
+    
     this.peek = function(){
         return items[items.length - 1];
     };
