@@ -1,0 +1,3 @@
+function Dictionary(){
+  var items = {};
+}
