@@ -44,7 +44,7 @@ function Set(){
 
   //Object.keys might not work in newer version of browsers. 
   this.size = function(){
-    return Object.keys(items).length || sizePolyfill();
+    return Object.keys(items).length || this.sizePolyfill();
   };
 
   //valuesPolyfill method
@@ -103,5 +103,19 @@ function Set(){
       }
     }
     return differenceSet;
+  };
+
+  this.subset = function(otherSet){
+    if(this.size() > otherSet.size()){
+      return false;
+    }else{
+      let values = this.values();
+      for(let index = 0; index < values.length; index++){
+        if(!otherSet.has(values[index])){
+          return false;
+        }
+      }
+      return true;
+    }
   };
 }
