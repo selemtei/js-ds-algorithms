@@ -166,3 +166,11 @@ function HashLinearProbing() {
     return undefined;
   }
 }
+
+function betterHashCode(key){
+  var hash = 5381;
+  for(var index = 0; index < key.length; index++){
+    hash = hash * 33 + key.charCodeAt(index);
+  }
+  return hash % 1013;
+}
