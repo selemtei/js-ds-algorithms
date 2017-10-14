@@ -135,41 +135,59 @@ function HashLinearProbing() {
     return loseHashCode(key);
   };
 
-  this.put = function(key, value){
+  this.put = function (key, value) {
     var position = loseHashCode(key);
-    if(table[position] == undefined){
+    if (table[position] == undefined) {
       table[position] = new ValuePair(key, valeu);
-    }else{
+    } else {
       var index = ++position;
-      while(table[index] != undefined){
+      while (table[index] != undefined) {
         index++;
       }
       table[index] = new ValuePair(key, value);
     }
   }
 
-  this.get = function(key){
+  this.get = function (key) {
     var position = hashCode(key);
-    if(table[position] !== undefined){
-      if(table[position].key === key){
+    if (table[position] !== undefined) {
+      if (table[position].key === key) {
         return table[position].value;
-      }else{
+      } else {
         var index = ++position;
-        while(table[index] === undefined || table[index].key !== key){
+        while (table[index] === undefined || table[index].key !== key) {
           index++;
         }
-        if(table[index].key === key){
+        if (table[index].key === key) {
           return table[index].value;
         }
       }
     }
     return undefined;
   }
+
+  this.remove = function (key) {
+    var position = hashCode(key);
+
+    if (table[position] !== undefined) {
+      if (table[position].key === key) {
+        table[position] = undefined;
+      } else {
+        var index = ++position;
+        while (table[index] === undefined || table[index].key !== key) {
+          index++;
+        }
+        if (table[index].key === key) {
+          table[index] = undefined;
+        }
+      }
+    }
+  };
 }
 
-function betterHashCode(key){
+function betterHashCode(key) {
   var hash = 5381;
-  for(var index = 0; index < key.length; index++){
+  for (var index = 0; index < key.length; index++) {
     hash = hash * 33 + key.charCodeAt(index);
   }
   return hash % 1013;
