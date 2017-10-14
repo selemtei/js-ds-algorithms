@@ -22,4 +22,12 @@ function HashTable(){
   this.remove() = function(key){
     table[loseHashCode(key)] = undefined;
   };
+
+  this.print = function(){
+    for(var index = 0; index < table.length; index++){
+      if(table[index] !== undefined){
+        console.log(index + ": " + table[index]);
+      }
+    }
+  };
 }
