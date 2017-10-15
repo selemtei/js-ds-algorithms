@@ -42,4 +42,17 @@ function ArrayList(){
       }
     }
   };
+
+  this.insertionSort = function(){
+    var length = array.length, j, temp;
+    for(var index = 1; index < length; index++){
+      j = index;
+      temp = array[index];
+      while(j > 0 && array[j - 1]){
+        array[j] = array[j - 1];
+        j--;
+      }
+      array[j] = temp;
+    }
+  };
 }
