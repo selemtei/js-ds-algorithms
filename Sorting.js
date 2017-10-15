@@ -18,7 +18,7 @@ function ArrayList(){
   this.bubbleSort = function(){
     var length = array.length;
     for(var index = 0; index < length; index++){
-      for(var j = 0; j < length - 1; j++){
+      for(var j = 0; j < length - 1 - index; j++){
         if(array[j] > array[j + 1]){
           swap(array, j, j + 1);
         }
