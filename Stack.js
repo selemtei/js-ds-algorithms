@@ -15,7 +15,7 @@ function Stack(){
     };
     
     this.peek = function(){
-        return items[items.length - 1];
+        return this.isEmpty() ? "Empty stack, no values" : items[items.length - 1];
     };
 
     this.isEmpty = function(){
